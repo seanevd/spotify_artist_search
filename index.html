@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500|Noto+Serif:400italic' rel='stylesheet' type='text/css'>
+
+        <title>Spotify Artist Search</title>
+        <meta name="description" content="A Spotify artist search tool.">
+
+        <meta property="og:site_name" content="Spotify artist search"/>
+        <meta property="og:title" content="Spotify Artist Search"/>
+        <meta property="og:description" content="A Spotify artist search tool."/>
+
+        <link rel="stylesheet" href="./dist/css/style.css">
+
+    </head>
+
+    <body>
+
+
+            <div id="artist-modal"></div>
+            <div class="row">
+                <div class="small-12 columns">
+                    <div class="home-search">
+                        <input type="search" id="artist-search">
+                        <label class="search-label" for="artist-search">Spotify Artist Search</label>
+                        <div id="search-results"></div>
+                    </div>
+
+
+                    <h2>Popular Artists</h2>
+                    <div id="pop-artists">
+                        <div class="loader">Loading...</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        <script id="modal-template" type="text/x-handlebars-template">
+            <div class="modal">
+                <div class="artist-image" style="background-image:url({{images.0.url}})"></div>
+                <a href="#" class="close">&#215;</a>
+                <div class="row">
+                    <div class="small-12 columns">
+                        <h2>{{name}}</h2>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+
+        <script id="pop-artists-template" type="text/x-handlebars-template">
+            <ul class="feature-artists">
+                {{#each items}}
+                    <li>
+                        <a href="#" artistData="{{id}}" class="modal-trigger">
+                            <div class="feature-photo" style="background-image: url({{lastUrl images}})" title="{{name}}"></div>
+                            <div class="feature-info">
+                                <div class="name">{{name}}</div>
+                            </div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </script>
+
+
+        <script id="search-results-template" type="text/x-handlebars-template">
+            <ul class="search-artists">
+                {{#each items}}
+                    <li>
+                        <a href="#" artistData="{{id}}" class="modal-trigger">
+                            <div class="search-photo" style="background-image: url({{lastUrl images}})" title="{{name}}"></div>
+                            <div class="search-info">
+                                <div class="name">{{name}}</div>
+                            </div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </script>
+
+        <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/lodash/lodash.min.js"></script>
+        <script src="dist/js/main.js"></script>
+
+    </body>
+
+</html>

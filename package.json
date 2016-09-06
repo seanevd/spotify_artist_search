@@ -1,0 +1,22 @@
+{
+  "name": "sean_duncan_zengrowth",
+  "version": "1.0.0",
+  "description": "A Zenefits Exercise",
+  "main": "index.js",
+  "author": "Sean",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.14.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "handlebars": "^4.0.5",
+    "jquery": "^3.1.0",
+    "jshint": "^2.9.3",
+    "lodash": "^4.15.0"
+  }
+}
