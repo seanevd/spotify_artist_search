@@ -19,6 +19,10 @@ $(function() {
 		$('.close').click(function(){
 			$('#artist-modal').removeClass('open').html();
 		});
+		$(document).keyup(function(e) {
+			var key = e.which || e.keyCode;
+			if (key === 27 && $('#artist-modal .close')) $('#artist-modal').removeClass('open').html();
+		});
 	}
 
 	function callArtist(data) {
@@ -114,7 +118,7 @@ $(function() {
 		    });
 		}
 		else $('#search-results').removeClass('open');
-		if (key === 13) {
+		if (key === 13 && $('.search-artists li')) {
 			$('.search-artists li').first().find('a').trigger("click");
 		}
 	});

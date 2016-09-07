@@ -35,7 +35,12 @@ gulp.task('styles', function() {
 gulp.task('html', function() {
     return gulp.src('./*.html')
         .pipe(browserSync.stream());
-})
+});
+
+gulp.task('images', function() {
+    return gulp.src('./src/assets/images/*')
+        .pipe(gulp.dest('dist/images'));
+});
 
 gulp.task('js', function() {
     return gulp.src(['./src/assets/js/**/*.js'])
@@ -51,4 +56,4 @@ gulp.task('js', function() {
 
 
 
-gulp.task('default', ['styles', 'js', 'serve']);
+gulp.task('default', ['styles', 'js', 'images', 'serve']);

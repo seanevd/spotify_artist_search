@@ -148,15 +148,25 @@ a {
         font-size: $fz4;
         appearance: none;
         outline: none;
-        padding: 16px 8px;
+        padding: 16px 8px 16px 24px;
     }
     .home-search {
         position: relative;
         margin-top: 32px;
+        .magnifier {
+            position: absolute;
+            height: 16px;
+            top: 0;
+            bottom: 0;
+            left: 8px;
+            margin: auto;
+            opacity: 0.75;
+            transition: opacity 150ms ease-in-out;
+        }
         label {
             position: absolute;
             top: 50%;
-            left: 8px;
+            left: 32px;
             transform: translateY(-50%);
             font-size: $fz4;
             color: $dark-grey;
@@ -172,6 +182,9 @@ a {
                     font-weight: 600;
                     color: $blue;
                     text-transform: uppercase;
+                }
+                ~ .magnifier {
+                    opacity: 1;
                 }
             }
         }
@@ -319,6 +332,7 @@ a {
         .artist-image {
             width: 100%;
             height: 256px;
+            background-color: $grey;
             background-size: cover;
             background-position: center;
         }
@@ -379,11 +393,15 @@ a {
 
     input[type='search'] {
         font-size: $fz3;
-        padding: 16px;
+        padding: 16px 16px 16px 46px;
     }
     .home-search {
-        label {
+        .magnifier {
+            height: 23px;
             left: 16px;
+        }
+        label {
+            left: 50px;
             font-size: $fz3;
         }
     }
@@ -448,7 +466,17 @@ a {
 
     input[type='search'] {
         font-size: $fz2;
-        padding: 32px;
+        padding: 32px 32px 32px 104px;
+    }
+    .home-search {
+        .magnifier {
+            height: 54px;
+            left: 32px;
+        }
+        label {
+            left: 112px;
+            font-size: $fz2;
+        }
     }
 
     .feature-artists {
